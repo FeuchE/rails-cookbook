@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Pick a recipe category</h1>
+  <%= link_to 'Create category', new_category_path, class: "btn btn-primary" %>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.name, category_path(category) %>
+    <% end %>
+  </ul>
+</div>

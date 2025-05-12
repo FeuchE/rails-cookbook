@@ -1,0 +1,9 @@
+<div class="container">
+  <h1><%= @category.name %></h1>
+
+  <ul>
+    <% @bookmarks.each do |bookmark| %>
+      <li><%= bookmark.recipe.name %>
+    <% end %>
+  </ul>
+</div>
