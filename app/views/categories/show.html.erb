@@ -1,9 +1,9 @@
 <div class="container">
   <h1><%= @category.name %></h1>
-
+  <%= link_to 'Create bookmark', new_category_bookmark_path(@category), class: "btn btn-primary" %>
   <ul>
     <% @bookmarks.each do |bookmark| %>
-      <li><%= bookmark.recipe.name %>
+      <li><%= bookmark.recipe.name %> <%= link_to 'Delete', category_bookmarks_path(@category, bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></li>
     <% end %>
   </ul>
 </div>

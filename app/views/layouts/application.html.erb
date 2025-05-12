@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Cookbook</a>
+        <%= link_to "All categories", categories_path, class: "btn btn-success" %>
+        <%= link_to "Add category", new_category_path, class: "btn btn-success" %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
