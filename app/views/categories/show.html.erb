@@ -3,7 +3,7 @@
   <%= link_to 'Create bookmark', new_category_bookmark_path(@category), class: "btn btn-primary" %>
   <ul>
     <% @bookmarks.each do |bookmark| %>
-      <li><%= bookmark.recipe.name %> <%= link_to 'Delete', category_bookmarks_path(@category, bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></li>
+      <li><%= link_to bookmark.recipe.name, category_bookmark_recipe_path(@category, bookmark, bookmark.recipe) %> <%= link_to 'Delete', category_bookmarks_path(@category, bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></li>
     <% end %>
   </ul>
 </div>
