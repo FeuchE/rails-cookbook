@@ -1,0 +1,10 @@
+<div class="bookmark-form">
+  <h1>Add a recipe to <%= @category.name %></h1>
+  <%= simple_form_for [category, bookmark] do |f| %>
+    <%= f.association :recipe %>
+    <%= f.input :comment, input_html: { placeholder: "Your comment goes here.." }  %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+  <hr>
+  <%= link_to 'Back', category_path(@category), class: "btn btn-info" %>
+</div>

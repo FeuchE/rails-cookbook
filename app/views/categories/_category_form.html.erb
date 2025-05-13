@@ -1,0 +1,9 @@
+<div class="category-form">
+  <h1>Add a new category</h1>
+  <%= simple_form_for category do |f| %>
+    <%= f.input :name, input_html: { placeholder: "The category name.." } %>
+    <%= f.submit class: "btn btn-primary"%>
+  <% end %>
+  <hr>
+  <%= link_to 'Back', categories_path, class: "btn btn-info" %>
+</div>

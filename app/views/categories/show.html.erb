@@ -9,6 +9,8 @@
   <div class="recipe-grid">
     <% @bookmarks.each do |bookmark| %>
       <%= render 'recipe_card',
+        category: @category,
+        bookmark: bookmark,
         name: bookmark.recipe.name,
         description: bookmark.recipe.description,
         comment: bookmark.comment,

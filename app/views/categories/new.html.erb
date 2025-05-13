@@ -1,9 +1,3 @@
 <div class="container">
-  <h1>Add a new category</h1>
-  <%= simple_form_for @category do |f| %>
-    <%= f.input :name %>
-    <%= f.submit class: "btn btn-primary"%>
-  <% end %>
-  <hr>
-  <%= link_to 'Back', categories_path, class: "btn btn-info" %>
+  <%= render 'category_form', category: @category %>
 </div>
