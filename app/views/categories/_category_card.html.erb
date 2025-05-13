@@ -1,4 +1,8 @@
-<div class="category-card" style="background-image: url('<%= image_url %>');">
+<% if category.photo.attached? %>
+  <div class="category-card" style="background-image: url('<%= cl_image_path(category.photo.key, width: 400, crop: "scale", quality: "auto", fetch_format: "auto") %>')">
+<% else %>
+  <div class="category-card" style="background-color: #ccc">
+<% end %>
   <%= link_to category_path(category), class: "category-card-link" do %>
     <div class="category-card-overlay">
       <h3><%= category.name %></h3>

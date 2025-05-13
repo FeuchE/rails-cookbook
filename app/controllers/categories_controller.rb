@@ -21,9 +21,15 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    redirect_to categories_path, notice: 'Category deleted'
+  end
+
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :photo)
   end
 end
