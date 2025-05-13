@@ -1,0 +1,7 @@
+<div class="category-card" style="background-image: url('<%= image_url %>');">
+  <%= link_to category_path(category), class: "category-card-link" do %>
+    <div class="category-card-overlay">
+      <h3><%= category.name %></h3>
+    </div>
+  <% end %>
+</div>

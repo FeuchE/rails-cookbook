@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%= @recipe.name %></h1>
-  <img src="<%= @recipe.image_url %>">
+  <%= render 'layouts/banner', title: @recipe.name, subtitle: "Discover the recipe below", image_url: @recipe.image_url %>
+
   <p><%= @recipe.description %></p>
 </div>

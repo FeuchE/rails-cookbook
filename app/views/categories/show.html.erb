@@ -1,9 +1,20 @@
 <div class="container">
-  <h1><%= @category.name %></h1>
-  <%= link_to 'Create bookmark', new_category_bookmark_path(@category), class: "btn btn-primary" %>
-  <ul>
+  <%= render 'layouts/banner', title: @category.name, subtitle: "Explore the recipes of this category", image_url: asset_path("category_images/#{@category.name.parameterize}.jpg") %>
+
+  <div class="container-fluid d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Recipes</h2>
+    <%= link_to 'Create bookmark', new_category_bookmark_path(@category), class: "btn btn-primary" %>
+  </div>
+
+  <div class="recipe-grid">
     <% @bookmarks.each do |bookmark| %>
-      <li><%= link_to bookmark.recipe.name, category_bookmark_recipe_path(@category, bookmark, bookmark.recipe) %> <%= link_to 'Delete', category_bookmarks_path(@category, bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></li>
+      <%= render 'recipe_card',
+        name: bookmark.recipe.name,
+        description: bookmark.recipe.description,
+        comment: bookmark.comment,
+        rating: bookmark.recipe.rating,
+        image_url: bookmark.recipe.image_url %>
     <% end %>
-  </ul>
+  </div>
+
 </div>

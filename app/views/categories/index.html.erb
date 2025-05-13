@@ -1,9 +1,16 @@
 <div class="container">
-  <h1>Pick a recipe category</h1>
-  <%= link_to 'Create category', new_category_path, class: "btn btn-primary" %>
-  <ul>
+  <%= render 'layouts/banner', title: "Welcome to the Rails Cookbook!", subtitle: "Discover your tastebuds", image_url: "https://www.tradegroup.com/wp-content/uploads/2023/07/image-1-1056x768.jpeg" %>
+
+  <div class="container-fluid d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Pick a recipe category</h2>
+    <%= link_to 'Create category', new_category_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="category-grid">
     <% @categories.each do |category| %>
-      <li><%= link_to category.name, category_path(category) %>
+      <%= render 'category_card',
+        category: category,
+        image_url: asset_path("category_images/#{category.name.parameterize}.jpg") %>
     <% end %>
-  </ul>
+  </div>
 </div>
