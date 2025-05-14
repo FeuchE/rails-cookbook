@@ -64,6 +64,17 @@
     margin: 0;
     font-size: 13px;
   }
+
+  .link {
+    text-decoration: none;
+    color: $link-blue;
+  }
+
+  .btn-link {
+    text-decoration: none;
+    font-style: italic;
+    color: $link-blue;
+  }
 }
 
 @media (max-width: 992px) {

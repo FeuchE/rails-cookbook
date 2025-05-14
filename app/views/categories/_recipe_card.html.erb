@@ -4,7 +4,7 @@
 
   <div class="recipe-card-content">
     <div class="card-header d-flex justify-content-between align-items-center mb-2">
-      <h5><%= name %></h5>
+      <h5><%= link_to name, category_bookmark_recipe_path(category, bookmark, bookmark.recipe), class: "link" %></h5>
       <%= form_with url: category_bookmark_path(category, bookmark), method: :delete, class: "d-inline" do %>
         <%= submit_tag 'Delete', data: { confirm: "Are you sure?" }, class: "btn btn-link p-0 m-0 align-baseline" %>
       <% end %>

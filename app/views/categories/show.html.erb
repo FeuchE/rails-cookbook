@@ -1,13 +1,12 @@
 <div class="container">
   <%= render 'layouts/banner', title: @category.name, subtitle: "Try a new #{@category.name} recipe", image_url: cl_image_path(@category.photo.key, width: 1000, crop: "scale", quality: "auto", fetch_format: "auto") %>
 
-  <%= form_with url: category_path(@category), method: :delete, class: "d-inline" do %>
-    <%= submit_tag 'Delete', data: { confirm: "Are you sure?" }, class: "btn btn-link p-0 m-0 align-baseline" %>
-  <% end %>
-
   <div class="container-fluid d-flex justify-content-between align-items-center mb-4">
     <h2 class="mb-0">Recipes</h2>
     <%= link_to 'Create bookmark', new_category_bookmark_path(@category), class: "btn btn-primary" %>
+    <%= form_with url: category_path(@category), method: :delete, class: "d-inline" do %>
+      <%= submit_tag 'Delete category', data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <% end %>
   </div>
 
   <div class="recipe-grid">
